@@ -56,13 +56,27 @@
 
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'JetBrains Mono', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background 0.45s ease, color 0.45s ease;
-        }
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.45s ease, color 0.45s ease;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url('wp1927706.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.12;       /* ← lower = more subtle (try 0.05 to 0.12) */
+    pointer-events: none;
+}
 
         /* ════════════ ANIMATED BACKGROUND ════════════ */
         #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
